@@ -1,75 +1,101 @@
-.icon{
-    display:inline-block;
-    width:66px;
-    margin-bottom:4px;
-    background:#dbdbdb;
-    border:1px solid #a3a3a3;
-    border-radius:4px;
-    border:1px solid rgba(0,0,0,.2);
-    color:#fff;
-    font-size:.75rem;
-    font-weight:normal;
-    line-height:1.5rem;
-    text-align:center;
-    text-shadow:1px 1px 2px rgba(0,0,0,.7);
-    text-transform:uppercase;
-    transition:opacity .4s
+.icon {
+  display: inline-block;
+  width: 70px;
+  margin-bottom: 4px;
+  background: #dbdbdb;
+  border: 1px solid rgba(0, 0, 0, 0.2); /* Only keep one border definition */
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: normal;
+  line-height: 1.5rem;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  transition: opacity 0.4s;
 }
 
-.type-normal{
-    background-color:#aa9
+.type-normal {
+  background-color: #aa9;
 }
-.type-fire{
-    background-color:#f42
+
+.type-fire {
+  background-color: #f42;
+  color: white;
 }
-.type-water{
-    background-color:#39f
+
+.type-water {
+  background-color: #39f;
+  color: white;
 }
-.type-electric{
-    background-color:#fc3
+
+.type-electric {
+  background-color: #fc3;
 }
-.type-grass{
-    background-color:#7c5
+
+.type-grass {
+  background-color: #7c5;
 }
-.type-ice{
-    background-color:#6cf
+
+.type-ice {
+  background-color: #6cf;
 }
-.type-fighting{
-    background-color:#b54
+
+.type-fighting {
+  background-color: #b54;
+  color: white;
 }
-.type-poison{
-    background-color:#a59
+
+.type-poison {
+  background-color: #a59;
+  color: white;
 }
-.type-ground{
-    background-color:#db5
+
+.type-ground {
+  background: linear-gradient(to bottom, #fc3 50%, #ba6 50%);
 }
-.type-flying{
-    background-color:#89f
+
+.type-flying {
+  background: linear-gradient(to bottom, #4fbac2 50%, #dbdbdbd3 50%);
 }
-.type-psychic{
-    background-color:#f59
+
+.type-psychic {
+  background-color: #f59;
+  color: white;
 }
-.type-bug{
-    background-color:#ab2
+
+.type-bug {
+  background-color: #ab2;
 }
-.type-rock{
-    background-color:#ba6
+
+.type-rock {
+  background-color: #ba6;
+  color: white;
 }
-.type-ghost{
-    background-color:#66b
+
+.type-ghost {
+  background-color: #66b;
+  color: white;
 }
-.type-dragon{
-    background-color:#76e
+
+.type-dragon {
+  background: linear-gradient(to bottom, rgb(71, 177, 247) 50%, #b21515 50%);
+  color: white;
 }
-.type-dark{
-    background-color:#754
+
+.type-dark {
+  background-color: #754;
+  color: white;
 }
-.type-steel{
-    background-color:#aab
+
+.type-steel {
+  background-color: #aab;
 }
-.type-fairy{
-    background-color:#e9e
+
+.type-fairy {
+  background-color: #e9e;
 }
-.type-curse{
-    background-color:#698
+
+.type-curse {
+  background-color: #698;
 }
