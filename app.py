@@ -5,7 +5,7 @@ import plotly.express as px
 import pandas as pd
 import matplotlib.pyplot as plt
 
-st.set_page_config(page_title="Pokédex", layout="wide")
+st.set_page_config(page_title="Fakemon Pokédex", layout="wide")
 
 
 # css file for displaying Pokemon type (fire, water etc.)
@@ -17,7 +17,7 @@ def local_css(file_name):
 # @st.cache_resource
 def get_data():
     # Read CSV, treat null values as empty string, and keep only Pokémon until generation 6
-    df = pd.read_csv("pokedex.csv", keep_default_na=False)
+    df = pd.read_csv("fakemon_pokedex.csv", keep_default_na=False)
     # Keep only Pokémon up to generation 6 (assuming there’s a 'generation' column)
     df_filtered = df[df.iloc[:, 5] <= 6]
     return df_filtered
@@ -68,51 +68,17 @@ with st.sidebar.form(key="my_form"):
     # code to handle button pressing is all the way at the bottom
     pressed = st.form_submit_button("Search Pokemon")
 
-# display credits on sidebar
-st.sidebar.subheader("Credits")
-st.sidebar.write(
-    "Of course, I do not claim to own any of the Pokemon data or images in any way. :full_moon_with_face:"
-)
-st.sidebar.write(
-    "The Kaggle links below show where I've obtained the data. Note that there are further acknowledgements within the Kaggle pages themselves, as the authors got their data from more original sources."
-)
-st.sidebar.markdown(
-    'Pokemon dataset taken from <a href="https://www.kaggle.com/datasets/mariotormo/complete-pokemon-dataset-updated-090420?select=pokedex_%28Update_04.21%29.csv">this Kaggle link</a>.',
-    unsafe_allow_html=True,
-)
-st.sidebar.markdown(
-    'Pokemon images taken from <a href="https://www.kaggle.com/datasets/kvpratama/pokemon-images-dataset">this Kaggle link</a>.',
-    unsafe_allow_html=True,
-)
 
-
-# use Pokemon name and id to get image path, refer to 'pokemon_images' folder to see how images are named
+# use Pokemon name and id to get image path, refer to 'fakemon_images' folder to see how images are named
 def get_image_path(name, id):
-    if name.startswith("Mega"):
-        if name.endswith(" X"):
-            path = "pokemon_images/" + str(id) + "-mega-x.png"
-        elif name.endswith(" Y"):
-            path = "pokemon_images/" + str(id) + "-mega-y.png"
-        else:
-            path = "pokemon_images/" + str(id) + "-mega.png"
-    elif name.endswith(" Rotom"):
-        rotom_type = name.split()[0].lower()
-        path = "pokemon_images/" + str(id) + "-" + rotom_type + ".png"
-    elif name.endswith(" Forme") or name.endswith(" Cloak") or name.endswith(" Form"):
-        if "Zygarde" in name:  # only 1 image present for Zygarde
-            path = "pokemon_images/" + str(id) + ".png"
-        else:
-            type = name.split()[1].lower()
-            path = "pokemon_images/" + str(id) + "-" + type + ".png"
-    elif name.startswith("Primal "):
-        type = name.split()[0].lower()
-        path = "pokemon_images/" + str(id) + "-" + type + ".png"
-    elif name.startswith("Arceus"):
-        path = (
-            "pokemon_images/" + str(id) + "-normal.png"
-        )  # this is just how Arceus is named in the image file
-    else:
-        path = "pokemon_images/" + str(id) + ".png"
+    # if name.endswith(" Forme") or name.endswith(" Cloak") or name.endswith(" Form"):
+    #     if "Zygarde" in name:  # only 1 image present for Zygarde
+    #         path = "fakemon_images/" + str(id) + ".png"
+    #     else:
+    #         type = name.split()[1].lower()
+    #         path = "fakemon_images/" + str(id) + "-" + type + ".png"
+    # else:
+    path = "fakemon_images/" + str(id) + ".png"
     return path
 
 
@@ -128,6 +94,7 @@ def display_basic_info(match):
     type_number = match["type_number"].iloc[0]
     ability1 = match["ability_1"].iloc[0]
     ability2 = match["ability_2"].iloc[0]
+
     ability_hidden = match["ability_hidden"].iloc[0]
 
     st.title(name + " #" + str(id).zfill(3))
