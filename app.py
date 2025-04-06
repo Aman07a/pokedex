@@ -356,8 +356,8 @@ if not pressed:
             display_basic_info(match)
         if "Base Stats & Type Defenses" in selected_info:
             display_base_stats_type_defenses(match)
-        if "Training and Breeding" in selected_info:
-            display_training_breeding(match)
+        # if "Training and Breeding" in selected_info:
+        #     display_training_breeding(match)
         if "Radar Chart" in selected_info:
             display_radar_chart(match)
 
